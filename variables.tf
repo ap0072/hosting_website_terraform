@@ -1,1 +1,1 @@
-variable "instance_data" {}
+#variable "instance_data" {}
