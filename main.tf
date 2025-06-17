@@ -21,7 +21,7 @@ output "instance_public_ip" {
 
 
 module "vpc_creation" {
-  source = "./module/vpc"
+  source = "./modules/vpc"
   vpc_details = var.vpc_details
 }
 
