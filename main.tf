@@ -117,35 +117,7 @@ resource "aws_instance" "server" {
 
   provisioner "remote-exec" {
     inline = [
-    	"sudo apt update -y",
-	"sudo apt-get install -y software-properties-common",
-	"sudo add-apt-repository universe -y",
-	"sudo add-apt-repository multiverse -y",
-	"sudo apt-get update -y",
-	"sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev unzip gcc",
-        "curl https://pyenv.run | bash",
-
-    	# Add pyenv env to profile
-    	"echo 'export PATH=\"$HOME/.pyenv/bin:$PATH\"' >> ~/.bashrc",
-    	"echo 'eval \"$(pyenv init --path)\"' >> ~/.bashrc",
-    	"echo 'eval \"$(pyenv init -)\"' >> ~/.bashrc",
-    	"echo 'eval \"$(pyenv virtualenv-init -)\"' >> ~/.bashrc",
-
-    	# Load pyenv into current shell
-    	"export PATH=\"$HOME/.pyenv/bin:$PATH\"",
-    	"eval \"$(pyenv init --path)\"",
-    	"eval \"$(pyenv init -)\"",
-    	"eval \"$(pyenv virtualenv-init -)\"",
-
-    	# Install and activate Python
-    	"pyenv install 3.6.15",
-    	"pyenv global 3.6.15",
-
-    	# Setup and run app
-    	"cd /home/ubuntu",
-    	"unzip virtual.zip",
-    	"pip install -r requirements.txt",
-    	"python app.py"
+	"echo 'Hello from the remote instance'",
 ]
 }
 }
